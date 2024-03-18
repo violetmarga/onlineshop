@@ -1,0 +1,43 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           src="https://logowik.com/content/uploads/images/517_apple1.jpg"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>Violeta Margarint</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" *ngIf ="isUserAdmin()" (click)="onDashboard()">
+      <mat-card-content>
+        <p>Dashboard</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Nexa Tech</span>
+      <span class="example-spacer"></span>
+      <app-cart-button></app-cart-button>
+    </mat-toolbar>
+    <img class="img-banner"
+         src="https://s13emagst.akamaized.net//products/57133/57132260/media/res_913e2136608a215ad1793d4b83c9cec6.png"/>
+    <img class="img-banner"
+         src="https://s13emagst.akamaized.net/layout/ro/images/db/104/156356.jpg"/>
+    <img class="img-banner"
+         src="https://s13emagst.akamaized.net//products/49825/49824113/media/res_ff2913a16097ee39858682afb2e25175.png"/>
+    <app-list-items [isAdmin]="false"></app-list-items>
+  </div>
+
+</mat-drawer-container>
